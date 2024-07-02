@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package greek;
+package greet;
 
-option go_package = "github.com/NwinNwin/gprc_learning/greet/proto";
+option go_package = "github.com/NwinNwin/grpc_learning/greet/proto";
 
 message GreetRequest {
     string first_name = 1;

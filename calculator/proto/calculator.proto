@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/NwinNwin/grpc_learning/calculator/proto";
+
+message CalculatorRequest {
+    uint32 first = 1;
+    uint32 second = 2;
+}
+
+message CalculatorResponse {
+    uint32 result = 1;
+}
+
+service CalculatorService {
+    rpc Sum(CalculatorRequest) returns (CalculatorResponse);
+}
