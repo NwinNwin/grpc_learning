@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package greek;
+
+option go_package = "github.com/NwinNwin/gprc_learning/greet/proto";
+
+message GreetRequest {
+    string first_name = 1;
+}
+
+message GreetResponse {
+    string result = 1;
+}
+
+service GreetService {
+    rpc Greet(GreetRequest) returns (GreetResponse);
+}
