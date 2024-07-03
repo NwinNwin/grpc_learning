@@ -4,15 +4,13 @@ package calculator;
 
 option go_package = "github.com/NwinNwin/grpc_learning/calculator/proto";
 
-message CalculatorRequest {
-    uint32 first = 1;
-    uint32 second = 2;
-}
+import "sum.proto";
+import "prime.proto";
+import "average.proto";
 
-message CalculatorResponse {
-    uint32 result = 1;
-}
 
 service CalculatorService {
-    rpc Sum(CalculatorRequest) returns (CalculatorResponse);
+    rpc Sum(SumRequest) returns (SumResponse);
+    rpc Prime(PrimeRequest) returns (stream PrimeResponse);
+    rpc Average(stream AverageRequest) returns (AverageResponse);
 }

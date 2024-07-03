@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/NwinNwin/grpc_learning/calculator/proto";
+
+message PrimeRequest {
+    uint32 number = 1;
+}
+
+message PrimeResponse {
+    uint32 result = 1;
+}
+

@@ -21,5 +21,6 @@ func main() {
 
 	// Additional client code goes here...
 	c := pb.NewGreetServiceClient(conn)
-	doGreet(c)
+	// doGreet(c)
+	doGreetEveryone(c)
 }

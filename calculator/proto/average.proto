@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/NwinNwin/grpc_learning/calculator/proto";
+
+message AverageRequest {
+    float number = 1;
+}
+
+message AverageResponse {
+    float result = 1;
+}
+

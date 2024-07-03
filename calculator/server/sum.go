@@ -10,9 +10,9 @@ import (
 // this file contains
 // implementation of all the rpc endpoints
 
-func (s *Server) Sum(ctx context.Context,in *pb.CalculatorRequest) (*pb.CalculatorResponse, error){
+func (s *Server) Sum(ctx context.Context,in *pb.SumRequest) (*pb.SumResponse, error){
 	log.Printf("Calulation function was invoked with request %v", in)
-	return &pb.CalculatorResponse{
+	return &pb.SumResponse{
 		Result: in.First + in.Second,
 	}, nil
 }

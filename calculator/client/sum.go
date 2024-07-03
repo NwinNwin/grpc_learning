@@ -9,7 +9,7 @@ import (
 
 func calSum(c pb.CalculatorServiceClient){
 	log.Println("doGreet invoked")
-	res, err := c.Sum(context.Background(), &pb.CalculatorRequest{First: 1, Second: 2})
+	res, err := c.Sum(context.Background(), &pb.SumRequest{First: 1, Second: 2})
 	if err != nil {
 		log.Fatalf("Failed to greet: %v", err)
 	}
