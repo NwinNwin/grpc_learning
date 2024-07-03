@@ -21,5 +21,5 @@ func main() {
 
 	// Additional client code goes here...
 	c := pb.NewCalculatorServiceClient(conn)
-	calAverage(c)
+	calMax(c)
 }

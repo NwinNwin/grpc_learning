@@ -7,10 +7,11 @@ option go_package = "github.com/NwinNwin/grpc_learning/calculator/proto";
 import "sum.proto";
 import "prime.proto";
 import "average.proto";
-
+import "max.proto";
 
 service CalculatorService {
     rpc Sum(SumRequest) returns (SumResponse);
     rpc Prime(PrimeRequest) returns (stream PrimeResponse);
     rpc Average(stream AverageRequest) returns (AverageResponse);
+    rpc Max(stream MaxRequest) returns (stream MaxResponse);
 }

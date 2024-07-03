@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/NwinNwin/grpc_learning/calculator/proto";
+
+message MaxRequest {
+    uint32 number = 1;
+}
+
+message MaxResponse {
+    uint32 result = 1;
+}
+
