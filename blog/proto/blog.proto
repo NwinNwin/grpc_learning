@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package blog;
+
+option go_package = "github.com/NwinNwin/grpc_learning/blog/proto";
+
+import "google/protobuf/empty.proto";
+
+// We will have CRUD operations for blog
+
+message Blog {
+    string id = 1;
+    string author_id = 2;
+    string title = 3;
+    string content = 4;
+}
+
+message BlogId{
+    string id = 1;
+}
+
+service BlogService {
+    // This takes blog as request, mongodb will create a id for us and it will return the Id
+    // We need BlogId because we couldn't write string as return type
+    rpc CreateBlog(Blog) returns (BlogId);
+
+    rpc ReadBlog(BlogId) returns (Blog);
+
+    // This is empty because the client already know what blog they updated
+    rpc UpdateBlog(Blog) returns (google.protobuf.Empty);
+
+    rpc DeleteBlog(BlogId) returns (google.protobuf.Empty);
+
+    // THis takes empty because we don't want to set any filter
+    rpc ListBlogs(google.protobuf.Empty) returns (stream Blog);
+
+
+
+}
